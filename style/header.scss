@@ -1,0 +1,29 @@
+@import "mixins";
+@import "variables.scss";
+
+.header {
+  padding-top: 45px;
+  @include center-row;
+
+  &__left {
+    @include center-row;
+
+    ul {
+      @include center-row;
+      gap: 50px;
+
+      li {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 18px;
+        color: $text-gray;
+      }
+    }
+  }
+
+  &__logo {
+    width: 53px;
+    height: 53px;
+    margin-right: 66px;
+  }
+}

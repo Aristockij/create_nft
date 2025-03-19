@@ -1,0 +1,64 @@
+@import "../../style/variables.scss";
+@import "../../style/functions.scss";
+@import "../../style/mixins.scss";
+
+.footer {
+  background: $color-black;
+
+  &__top {
+    padding-top: vc(88);
+    margin-bottom: 24px;
+    @include center-row;
+    gap: 10px;
+
+    ul {
+      @include center-row;
+      gap: vc(70);
+    }
+
+    ul li {
+      color: $text-gray;
+    }
+  }
+
+  &__bottom {
+    @include center-row;
+    color: $text-gray;
+    padding-top: vc(56);
+    padding-bottom: vc(86);
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #818181;
+    }
+  }
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+  @include center-row;
+
+  span {
+    font-size: vc(30);
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    color: $color-white;
+  }
+}
+.soc {
+  ul {
+    @include center-row;
+    gap: 42px;
+  }
+
+  img {
+    width: 24px;
+  }
+}

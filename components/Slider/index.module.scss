@@ -1,0 +1,117 @@
+@import "../../style/variables.scss";
+@import "../../style/functions.scss";
+@import "../../style/mixins.scss";
+
+.container {
+  background: $color-bg-gray;
+  padding-top: vc(70);
+  padding-bottom: 70px;
+  h2 {
+    color: $gray-title;
+    text-align: center;
+    margin-bottom: vc(70);
+  }
+}
+.slider {
+  margin-bottom: vc(70);
+}
+.slide {
+  max-width: vc(320);
+  background-color: $color-white;
+  padding: 14px;
+  border-radius: vc(24);
+
+  &__img {
+    width: 100%;
+    position: relative;
+
+    span {
+      @include center;
+      font-family: var(--font-poppins);
+      font-weight: 500;
+      font-size: 14px;
+      right: 11px;
+      top: 14px;
+      position: absolute;
+      height: vc(34);
+      color: $text-white;
+      z-index: 2;
+      border-radius: vc(10);
+      padding: 0 vc(14);
+      background-color: rgba(28, 29, 32, 0.35);
+      border: 2px solid rgba(28, 29, 32, 0.08);
+    }
+    img {
+      border-radius: vc(23);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  &__info {
+    @include center-row;
+
+    &__cur {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 22px;
+        height: 22px;
+        background: url("/eth.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &__title {
+      color: rgb(148, 163, 184);
+      font-size: vc(14);
+    }
+  }
+}
+
+.btns {
+  margin: 0 auto;
+  @include center;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 24px;
+    width: 2px;
+    background: rgb(230, 232, 236);
+  }
+
+  button {
+    width: 83px;
+    height: 64px;
+    background: $color-white;
+    @include center;
+
+    img {
+      width: 14px;
+    }
+
+    &:nth-child(1) {
+      border-radius: 20px 0 0 20px;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 20px 20px 0;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import "mixins";
+@import "variables";
+@import "functions/responsive.scss";
+
+body {
+  background: $color-bg;
+  font-size: vc(18);
+  font-family: var(--font-inter);
+  font-feature-settings: "calt" 0;
+}
+
+.container {
+  max-width: vc(1440);
+  width: 100%;
+  padding: 0 vc(97);
+  margin: 0 auto;
+}
+
+.btn {
+  height: 50px;
+  background: $color-black;
+  border-radius: vc(16);
+  color: $text-white;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0 vc(21);
+  border: 2px solid $color-black;
+  @include center;
+
+  &.black {
+    background: $color-white;
+    color: $color-black;
+    border: 2px solid $color-white;
+  }
+
+  &.big {
+    height: vc(68);
+    font-weight: 600;
+  }
+
+  &.large {
+    font-size: vc(16);
+    padding: 0 vc(27);
+    height: vc(60);
+  }
+
+  &.transparent {
+    padding: 0 vc(19);
+    color: $text-black;
+    background: transparent;
+
+    &-white {
+      color: $text-white;
+      border: 2px solid $color-white;
+    }
+  }
+
+  &.card-btn {
+    font-family: var(--font-poppins);
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+  }
+}

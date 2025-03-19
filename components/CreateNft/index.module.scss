@@ -1,0 +1,42 @@
+@import "../../style/variables.scss";
+@import "../../style/functions.scss";
+@import "../../style/mixins.scss";
+
+.container {
+  padding-top: vc(120);
+  padding-bottom: vc(120);
+}
+
+.card {
+  background: $color-black;
+  border-radius: 30px;
+  padding: 31px 31px 31px 66px;
+  @include center-row;
+
+  h2 {
+    color: $color-white;
+    font-family: var(--font-poppins);
+    font-size: vc(45);
+    margin-bottom: 20px;
+  }
+
+  span {
+    display: inline-block;
+    margin-bottom: 57px;
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    color: $gray-title;
+  }
+
+  &__img {
+    img {
+      border-radius: 15px;
+    }
+  }
+}
+
+.btns {
+  @include center-row;
+  justify-content: flex-start;
+  gap: 24px;
+}

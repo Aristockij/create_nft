@@ -1,0 +1,121 @@
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
+@import "../../style/functions.scss";
+
+.content {
+  @include center-row;
+  align-items: flex-start;
+  padding-top: vc(110);
+  padding-bottom: vc(154);
+}
+
+.left {
+  max-width: vc(562);
+
+  h1 {
+    padding-top: vc(16);
+    margin-bottom: vc(30);
+  }
+
+  p {
+    color: $text-gray;
+    margin-bottom: vc(44);
+  }
+}
+
+.btns {
+  @include center-row;
+  justify-content: flex-start;
+  gap: vc(22);
+  margin-bottom: 81px;
+}
+
+.info {
+  @include center-row;
+  justify-content: flex-start;
+  gap: vc(60);
+
+  &__title {
+    font-family: var(--font-public-sans);
+    font-size: vc(36);
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    color: $text-gray;
+    font-size: vc(12);
+    font-weight: 500;
+  }
+}
+
+.right {
+  position: relative;
+  width: vc(780);
+  height: vc(543);
+  transform: translateX(vc(53));
+}
+
+.rect_1 {
+  position: absolute;
+  top: vc(11);
+  left: 0;
+  width: vc(391);
+  &::before {
+    content: "";
+    background: url("/assets/rect_1-shadow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: vc(491);
+    height: vc(495);
+    position: absolute;
+    top: vc(10);
+    left: 0;
+    position: absolute;
+  }
+
+  img {
+    border-radius: vc(25);
+  }
+}
+
+.rect_2 {
+  position: absolute;
+  bottom: vc(26);
+  right: vc(-69);
+  width: vc(320);
+  z-index: 2;
+
+  &::before {
+    content: "";
+    background: url("/assets/rect_2-shadow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: vc(420);
+    height: vc(420);
+    position: absolute;
+    top: vc(-20);
+    left: 0;
+    position: absolute;
+  }
+
+  img {
+    border-radius: vc(22);
+  }
+}
+
+.dots {
+  position: absolute;
+  top: vc(-7);
+  right: vc(-97);
+  width: vc(173);
+  z-index: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: vc(54);
+  right: vc(140);
+  width: vc(128);
+}
