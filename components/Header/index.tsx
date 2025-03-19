@@ -1,8 +1,30 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const index = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const Index = () => {
   const anchor = ["Discover", "creators", "Sell", "stats"];
+
+  useEffect(() => {
+    const bodyHeight = document.querySelector("body")?.scrollHeight;
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "header",
+        pin: true,
+        start: "top top",
+        end: bodyHeight,
+        // markers: true,
+        pinSpacing: false,
+      },
+    });
+  }, []);
+
   return (
     <header className='container'>
       <div className='header'>
@@ -29,4 +51,4 @@ const index = () => {
     </header>
   );
 };
-export default index;
+export default Index;

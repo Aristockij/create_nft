@@ -1,8 +1,15 @@
 @import "mixins";
 @import "variables.scss";
 
+header {
+  z-index: 10;
+  background-color: $color-bg;
+  border-radius: 0 0 20px 20px;
+}
+
 .header {
   padding-top: 45px;
+  padding-bottom: 17px;
   @include center-row;
 
   &__left {

@@ -7,6 +7,7 @@ import s from "./index.module.scss";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { useEffect, useState } from "react";
 
 const Index = () => {
   const swiperParams: SwiperOptions = {
@@ -84,12 +85,26 @@ const Index = () => {
     },
   ];
 
+  const [curSliderInfo, setSliderInfo] = useState(sliderInfo);
+  const getRandomValue = (min: number, max: number): number => {
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+  };
+
+  useEffect(() => {
+    const updatedSliderInfo = curSliderInfo.map((item) => ({
+      ...item,
+      current: getRandomValue(1.05, 1.75),
+    }));
+
+    setSliderInfo(updatedSliderInfo);
+  }, []);
+
   return (
     <section className={s.container}>
       <h2>Weekly - Top NFT</h2>
 
       <Swiper {...swiperParams} className={s.slider}>
-        {sliderInfo.map((el, index) => (
+        {curSliderInfo.map((el, index) => (
           <SwiperSlide key={index} className={s.slide}>
             <div className={s.slide__img}>
               <span>{el.time}</span>

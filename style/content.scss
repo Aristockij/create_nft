@@ -16,6 +16,18 @@ body {
   margin: 0 auto;
 }
 
+.trigger-el {
+  opacity: 0;
+}
+.img-trigger {
+  position: absolute;
+  transform: translateX(700px);
+  opacity: 0;
+}
+.arr-trigger {
+  opacity: 0;
+}
+
 .btn {
   height: 50px;
   background: $color-black;
