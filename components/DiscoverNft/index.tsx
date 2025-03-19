@@ -46,6 +46,9 @@ const Index = () => {
   return (
     <section className={`container trigger-container ${s.content}`}>
       <div className={s.left}>
+        <div className={s.mob}>
+          <span>OVER 1M CREATORS</span>{" "}
+        </div>
         <h1 className='trigger-el'>Discover And Create NFTs</h1>
         <p className='trigger-el'>
           Discover, Create and Sell NFTs On Our NFT Marketplace

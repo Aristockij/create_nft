@@ -7,13 +7,27 @@ body {
   font-size: vc(18);
   font-family: var(--font-inter);
   font-feature-settings: "calt" 0;
+
+  @include tablet {
+    font-size: vc(14);
+  }
 }
 
 .container {
-  max-width: vc(1440);
+  max-width: 1440px;
   width: 100%;
   padding: 0 vc(97);
   margin: 0 auto;
+
+  @include tablet {
+    overflow-x: hidden;
+    padding: 0 vc(67);
+  }
+
+  @include tablet {
+    overflow-x: hidden;
+    padding: 0 30px;
+  }
 }
 
 .trigger-el {
@@ -31,13 +45,18 @@ body {
 .btn {
   height: 50px;
   background: $color-black;
-  border-radius: vc(16);
+  border-radius: 14px;
   color: $text-white;
   font-weight: 500;
   text-transform: uppercase;
   padding: 0 vc(21);
   border: 2px solid $color-black;
+  transition: 0.3s;
   @include center;
+  @include tablet {
+    height: 40px;
+    font-size: 11px;
+  }
 
   &.black {
     background: $color-white;
@@ -48,18 +67,42 @@ body {
   &.big {
     height: vc(68);
     font-weight: 600;
+
+    @include tablet {
+      font-size: 16px;
+      height: 51px;
+    }
+
+    @include mobile {
+      height: 33px;
+      font-size: 10px;
+      border-radius: 6px;
+      padding: 13px;
+    }
   }
 
   &.large {
     font-size: vc(16);
     padding: 0 vc(27);
     height: vc(60);
+
+    @include tablet {
+      height: 42px;
+      font-size: 11px;
+      border-radius: 8px;
+      padding: 0 22px;
+    }
   }
 
   &.transparent {
     padding: 0 vc(19);
     color: $text-black;
     background: transparent;
+
+    @include tablet {
+      border-radius: 8px;
+      padding: 0 14px;
+    }
 
     &-white {
       color: $text-white;
@@ -72,5 +115,15 @@ body {
     font-size: 14px;
     font-weight: 600;
     height: 50px;
+  }
+
+  &__header {
+    height: 60px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    background: #d7d7d7;
+    color: $color-black;
   }
 }

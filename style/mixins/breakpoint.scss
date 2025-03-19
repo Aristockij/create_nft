@@ -49,7 +49,7 @@
 }
 
 @mixin tablet {
-  @media (max-width: (variables.$tablet - 1px)) {
+  @media (max-width: (variables.$tablet * 1px)) {
     @content;
   }
 }

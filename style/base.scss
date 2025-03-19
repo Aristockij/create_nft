@@ -8,6 +8,11 @@
   --width-current: #{variables.$desktop-md * 1px};
   --width-multiplier: var(--width-current) / var(--width-base);
 
+  @media (max-width: 1024px) {
+    --width-current: 100vmin;
+    --width-base: 1024;
+  }
+
   @media (max-width: 800px) {
     --width-current: 100vmin;
     --width-base: 414;
@@ -149,8 +154,12 @@ h1 {
   font-size: responsive.vc(75);
   letter-spacing: -0.03em;
 
-  @include breakpoint.devices {
-    font-size: responsive.vc(30);
+  @include breakpoint.tablet {
+    font-size: 54px;
+  }
+
+  @include breakpoint.mobile {
+    font-size: 48px;
   }
 }
 
@@ -165,7 +174,7 @@ h2 {
   font-weight: 600;
 
   @include breakpoint.devices {
-    font-size: responsive.vc(30);
+    font-size: 32px;
   }
 }
 

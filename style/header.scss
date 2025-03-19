@@ -1,5 +1,6 @@
 @import "mixins";
 @import "variables.scss";
+@import "functions.scss";
 
 header {
   z-index: 10;
@@ -12,18 +13,51 @@ header {
   padding-bottom: 17px;
   @include center-row;
 
+  @include tablet {
+    padding-top: 32px;
+  }
+
+  &-desktop {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &-mob {
+    display: none;
+    @include mobile {
+      display: flex;
+    }
+  }
+
   &__left {
     @include center-row;
+
+    @include mobile {
+      span {
+        font-family: var(--font-poppins);
+        font-weight: 600;
+        font-size: 22px;
+      }
+    }
 
     ul {
       @include center-row;
       gap: 50px;
 
+      @include tablet {
+        gap: 32px;
+      }
+
       li {
         text-transform: uppercase;
         font-weight: 500;
-        font-size: 18px;
+        font-size: vc(18);
         color: $text-gray;
+
+        @include tablet {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -32,5 +66,61 @@ header {
     width: 53px;
     height: 53px;
     margin-right: 66px;
+
+    @include tablet {
+      width: 38px;
+      height: 38px;
+      margin-right: 40px;
+    }
+
+    @include mobile {
+      width: 46px;
+      height: 46px;
+      margin-right: 10px;
+    }
+  }
+
+  &__mob {
+    height: 100%;
+    transition: 0.3s;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: $color-bg;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 40px 30px;
+    justify-content: space-between;
+
+    &-title {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #cbcbcb;
+    }
+
+    ul {
+      padding-top: 40px;
+    }
+
+    ul li {
+      font-size: 40px;
+      color: $text-gray;
+      text-transform: uppercase;
+    }
+
+    &.open {
+      top: 0;
+    }
+  }
+  &__soc {
+    ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    img {
+      width: 20px;
+    }
   }
 }

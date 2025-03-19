@@ -5,6 +5,15 @@
 .container {
   padding-top: vc(120);
   padding-bottom: vc(120);
+  @include tablet {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  @include mobile {
+    padding-top: 70px;
+    padding-bottom: 190px;
+  }
 }
 
 .card {
@@ -12,12 +21,32 @@
   border-radius: 30px;
   padding: 31px 31px 31px 66px;
   @include center-row;
+  position: relative;
+
+  @include tablet {
+    padding: 23px 22px 23px 47px;
+  }
+  @include mobile {
+    padding: 22px 31px vc(100) 31px;
+    flex-direction: column;
+  }
 
   h2 {
     color: $color-white;
     font-family: var(--font-poppins);
     font-size: vc(45);
     margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 9px;
+      text-align: center;
+    }
   }
 
   span {
@@ -26,11 +55,35 @@
     font-family: var(--font-poppins);
     font-weight: 500;
     color: $gray-title;
+
+    @include tablet {
+      margin-bottom: 42px;
+    }
+
+    @include mobile {
+      font-size: 10px;
+      margin: 0 auto 22px auto;
+      display: block;
+      text-align: center;
+    }
   }
 
   &__img {
+    @include tablet {
+      width: 263px;
+    }
+
     img {
       border-radius: 15px;
+    }
+
+    @include mobile {
+      position: absolute;
+      max-width: 370px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -50%;
+      width: calc(100% - 62px);
     }
   }
 }

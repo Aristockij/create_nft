@@ -6,20 +6,37 @@
   background: $color-bg-gray;
   padding-top: vc(70);
   padding-bottom: 70px;
+  @include tablet {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   h2 {
     color: $gray-title;
     text-align: center;
     margin-bottom: vc(70);
+
+    @include tablet {
+      margin-bottom: vc(50);
+    }
   }
 }
 .slider {
   margin-bottom: vc(70);
+  @include tablet {
+    margin-bottom: 50px;
+  }
 }
+
 .slide {
   max-width: vc(320);
   background-color: $color-white;
   padding: 14px;
   border-radius: vc(24);
+  @include tablet {
+    padding: 10px;
+    max-width: 210px;
+  }
 
   &__img {
     width: 100%;
@@ -51,6 +68,12 @@
     font-weight: 600;
     margin-bottom: 20px;
     padding-top: 20px;
+
+    @include tablet {
+      font-size: 16px;
+      margin-bottom: 12px;
+      padding-top: 12px;
+    }
   }
 
   &__info {
@@ -59,6 +82,9 @@
     &__cur {
       position: relative;
       padding-left: 20px;
+      @include tablet {
+        font-size: 12px;
+      }
 
       &:before {
         content: "";
@@ -76,6 +102,10 @@
     &__title {
       color: rgb(148, 163, 184);
       font-size: vc(14);
+
+      @include tablet {
+        font-size: 11px;
+      }
     }
   }
 }

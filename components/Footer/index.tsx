@@ -31,6 +31,7 @@ const index = () => {
           </div>
         </div>
       </div>
+      <div className={s.mob}>© 2023 DiveSea All Rights Reserved.</div>
     </footer>
   );
 };

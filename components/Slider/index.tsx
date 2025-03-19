@@ -15,6 +15,7 @@ const Index = () => {
     loop: true,
     slidesPerView: "auto",
     modules: [Navigation],
+    centeredSlides: true,
     navigation: {
       prevEl: ".prevBtn",
       nextEl: ".nextBtn",
