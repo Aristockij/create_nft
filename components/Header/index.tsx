@@ -26,13 +26,23 @@ const Index = () => {
       },
     });
   }, []);
-
   const [isOpen, setOpen] = useState(false);
+
   const openMenu = () => {
     setOpen(true);
+    const body = document.querySelector("body");
+
+    if (body) {
+      body.style.overflow = "hidden";
+    }
   };
   const closeMenu = () => {
     setOpen(false);
+    const body = document.querySelector("body");
+
+    if (body) {
+      body.style.overflow = "inherit";
+    }
   };
 
   return (
