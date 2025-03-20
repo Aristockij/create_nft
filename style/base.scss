@@ -17,6 +17,21 @@
     --width-current: 100vmin;
     --width-base: 414;
   }
+
+  @media (min-width: 1920px) {
+    --width-current: 1920px;
+    --width-base: 1440;
+  }
+
+  @media (min-width: 2560px) {
+    --width-current: 2560px;
+    --width-base: 1440;
+  }
+
+  @media (min-width: 3840px) {
+    --width-current: 3840px;
+    --width-base: 1920;
+  }
 }
 
 html {
